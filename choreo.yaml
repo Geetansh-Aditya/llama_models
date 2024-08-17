@@ -1,0 +1,25 @@
+version: '2.0'
+
+services:
+  my-flask-app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      # Add any additional environment variables here
+      # - OLLAMA_API_KEY=your_api_key_here
+      # - OTHER_ENV_VAR=value
+    # Optional: Define volume mounts if needed
+    # volumes:
+    #   - /path/on/host:/path/in/container
+
+    # Optional: Define any other service configurations
+    # depends_on:
+    #   - another_service
+    # networks:
+    #   - my-network
+
+networks:
+  my-network:
+    driver: bridge
